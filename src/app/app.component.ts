@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Home Movies HD';
+  title = 'Movie App';
+  constructor(private service:SharedService){}
+  MovieList:any=[];
+  
+ngOnInit():void{
+this.refreshMovieList();
+}
+rentThis(MovieID:BigInteger){
+
+}
+  refreshMovieList(){
+    this.service.getMovList().subscribe(data=>{
+      this.MovieList=data;
+    });
+  }
+
 }

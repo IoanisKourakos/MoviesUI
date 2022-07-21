@@ -14,6 +14,7 @@ import { FormsModule,ReactiveFormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     MoviesComponent
+    
   ],
   imports: [
     BrowserModule,

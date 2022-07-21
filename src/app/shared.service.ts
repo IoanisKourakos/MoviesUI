@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl="http://localhost:13670/api";
+readonly APIUrl="http://localhost:13670/api/";
 
   constructor(private http:HttpClient) { }
   getMovList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'Movies');
+    return this.http.get<any>(this.APIUrl+'movies');
   }
 }
